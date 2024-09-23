@@ -21,7 +21,7 @@
         "livewire/livewire": "^2.12.8",
         "spatie/laravel-medialibrary": "^10.15.0",
         "spatie/laravel-package-tools": "^1.16.5",
-        "symfony/yaml": "^6.4.12"
+        "symfony/yaml": "^7.1.5"
     },
     "require-dev": {
         "laravel/pint": "^1.17.3",
