@@ -31,7 +31,7 @@ class PageSettingsEditor extends Component
 
     public $schema;
 
-    protected function getRules()
+    public function getRules()
     {
         return [
             'block.title' => 'required',
