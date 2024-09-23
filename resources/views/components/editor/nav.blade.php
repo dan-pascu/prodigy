@@ -59,13 +59,13 @@
             @if($page)
                 <x-prodigy::editor.nav-button
                         :active="$currentState == 'blocksList'"
-                        x-on:click="Livewire.emit('updateState', 'blocksList')">
+                        x-on:click="Livewire.dispatch('updateState', 'blocksList')">
                    Edit Current Page
                 </x-prodigy::editor.nav-button>
-                <x-prodigy::editor.nav-button x-on:click="Livewire.emit('editPageSettings', {{ $page->id }})">
+                <x-prodigy::editor.nav-button x-on:click="Livewire.dispatch('editPageSettings', {{ $page->id }})">
                     Current Page Settings
                 </x-prodigy::editor.nav-button>
-                <x-prodigy::editor.nav-button x-on:click="Livewire.emit('duplicatePageFromDraft', {{ $page->id }})">
+                <x-prodigy::editor.nav-button x-on:click="Livewire.dispatch('duplicatePageFromDraft', {{ $page->id }})">
                     Duplicate
                 </x-prodigy::editor.nav-button>
 
@@ -75,7 +75,7 @@
 
             <x-prodigy::editor.nav-button
                     :active="$currentState == 'pagesList'"
-                    x-on:click="Livewire.emit('updateState','pagesList')">
+                    x-on:click="Livewire.dispatch('updateState','pagesList')">
                 All Pages
             </x-prodigy::editor.nav-button>
 
@@ -91,7 +91,7 @@
                 @forelse($entry_schemas as $schema)
                     <x-prodigy::editor.nav-button
                             wire:key="{{$schema['type']}}"
-                            x-on:click="Livewire.emit('viewEntriesByType', '{{ $schema['type'] }}')">
+                            x-on:click="Livewire.dispatch('viewEntriesByType', '{{ $schema['type'] }}')">
                         {{ $schema['labels']['plural'] ?? str($schema['type'])->title() ?? 'Error reading schema' }}
                     </x-prodigy::editor.nav-button>
                 @empty

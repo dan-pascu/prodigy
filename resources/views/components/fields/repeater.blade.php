@@ -27,12 +27,12 @@
             >
                 <x-slot:actions>
                     <button
-                            x-on:click="Livewire.emit('editBlock', {{ $child_block->id }})"
+                            x-on:click="Livewire.dispatch('editBlock', {{ $child_block->id }})"
                             class="pro-text-blue-500 hover:pro-text-blue-700 hover:pro-underline pro-mr-2">
                         Edit
                     </button>
                     <button class="pro-text-gray-500 hover:pro-text-red-500 pro-relative pro-top-[0.2rem]"
-                            x-on:click="Livewire.emit('deleteLink', {{ $child_block->link->id }})">
+                            x-on:click="Livewire.dispatch('deleteLink', {{ $child_block->link->id }})">
                         <x-prodigy::icons.close class="pro-w-4"/>
                     </button>
                 </x-slot:actions>
@@ -40,7 +40,7 @@
         @empty
         @endforelse
         <x-prodigy::editor.button
-                x-on:click="Livewire.emit('addChildBlockThenEdit', 'repeater', '{{ $block->model }}', {{ $block->id }});">+ 'Add New'
+                x-on:click="Livewire.dispatch('addChildBlockThenEdit', 'repeater', '{{ $block->model }}', {{ $block->id }});">+ 'Add New'
         </x-prodigy::editor.button>
     </div>
 

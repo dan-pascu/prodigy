@@ -24,7 +24,7 @@
               const response = confirm('Permanently discard changes?');
 
               if (response) {
-                   return Livewire.emit('deleteDraft', draft_id);
+                   return Livewire.dispatch('deleteDraft', draft_id);
               }
         },
         }"
@@ -56,7 +56,7 @@
 
             <x-prodigy::editor.button
                     class="pro-flex-grow pro-font-semibold"
-                    x-on:click="Livewire.emit('closeProdigyPanel')">
+                    x-on:click="Livewire.dispatch('closeProdigyPanel')">
                 Close Editor
             </x-prodigy::editor.button>
             <x-prodigy::editor.button

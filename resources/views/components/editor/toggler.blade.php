@@ -10,7 +10,7 @@
         <script>
             document.onkeydown = function (e) {
                 if (e.keyCode == 27) {
-                    window.livewire.emit('openProdigyPanel')
+                    window.livewire.dispatch('openProdigyPanel')
                 }
             };
         </script>

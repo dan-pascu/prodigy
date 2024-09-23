@@ -26,7 +26,7 @@
                 </x-slot:label>
                 <x-slot:actions>
                     <button
-                            x-on:click.prevent="Livewire.emit('editEntry', {{ $entry_item->id }})"
+                            x-on:click.prevent="Livewire.dispatch('editEntry', {{ $entry_item->id }})"
                             class="pro-text-blue-500 hover:pro-text-blue-700 hover:pro-underline pro-mr-2">
                         Edit
                     </button>
