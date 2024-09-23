@@ -79,18 +79,18 @@ public function bootingPackage(): void
      */
     public function defineProdigyUploadDisk()
     {
-        app()->config['filesystems.disks.prodigy'] = [
+        config(['filesystems.disks.prodigy' => [
             'driver' => 'local',
             'root' => base_path('prodigy/media'),
             'url' => env('APP_URL').'/prodigy',
-        ];
+        ]]);
 
         // Consider opening up this to be more flexible.
         // This is spliced in in such a weird way because
         // if the folder contains a period (as in /prodigyphp.com)
         // the link will break.
         config(['filesystems.links' => [
-            ...app()->config['filesystems.links'],
+            ...config('filesystems.links'),
             public_path('prodigy') => base_path('prodigy/media'),
         ]]);
     }
