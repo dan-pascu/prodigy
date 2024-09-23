@@ -12,7 +12,7 @@ deleteLink = function (id) {
     const response = confirm("Permanently delete?");
 
     if (response) {
-        Livewire.emit('deleteLink', id);
+        Livewire.dispatch('deleteLink', id);
     }
 }
 
@@ -21,7 +21,7 @@ deletePage = function (id) {
     const response = confirm("Permanently delete?");
 
     if (response) {
-        Livewire.emit('deletePage', id);
+        Livewire.dispatch('deletePage', id);
     }
 }
 
@@ -30,6 +30,6 @@ deleteEntry = function (id) {
     const response = confirm("Permanently delete?");
 
     if (response) {
-        Livewire.emit('deleteEntry', id);
+        Livewire.dispatch('deleteEntry', id);
     }
 }

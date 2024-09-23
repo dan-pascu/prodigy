@@ -65,7 +65,7 @@
                 Discard Changes
             </x-prodigy::editor.button>
 
-            <x-prodigy::editor.button wire:click="$emit('publishDraft', {{ $page->id }})"
+            <x-prodigy::editor.button wire:click="$dispatch('publishDraft', {{ $page->id }})"
                                       class="pro-flex-grow pro-font-semibold pro-bg-gradient-to-bl pro-from-blue-400 pro-to-blue-600 pro-border pro-border-blue-700 hover:pro-from-blue-600 hover:pro-to-blue-700 pro-text-white">
                 Publish
             </x-prodigy::editor.button>

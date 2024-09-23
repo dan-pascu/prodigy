@@ -5,7 +5,7 @@
 <div class="pro-flex pro-flex-col pro-max-h-screen">
     <x-prodigy::editor.nav label="{{ $entry_schema['labels']['plural'] ?? str($entry_schema['type'])->title() }}"
                            :page="$page" currentState="entriesList">
-        <button wire:click="$emit('createEntryByType', '{{$entry_schema['type']}}')">
+        <button wire:click="$dispatch('createEntryByType', '{{$entry_schema['type']}}')">
             <x-prodigy::icons.plus class="pro-w-6"></x-prodigy::icons.plus>
         </button>
     </x-prodigy::editor.nav>
@@ -41,7 +41,7 @@
                 <p class="pro-mb-4">{{ $entry_schema['labels']['plural'] ?? str($entry_schema['type'])->title() }}
                     not found.</p>
                 <x-prodigy::editor.button class="pro-flex-grow"
-                                          wire:click="$emit('createEntryByType', '{{$entry_schema['type']}}')">
+                                          wire:click="$dispatch('createEntryByType', '{{$entry_schema['type']}}')">
                     Create One
                 </x-prodigy::editor.button>
             </div>

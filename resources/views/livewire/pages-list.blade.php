@@ -1,6 +1,6 @@
 <div class="pro-flex pro-flex-col pro-max-h-screen">
     <x-prodigy::editor.nav label="Pages" :page="$page" currentState="pagesList">
-        <button wire:click="$emit('createPage')">
+        <button wire:click="$dispatch('createPage')">
             <x-prodigy::icons.plus class="pro-w-6"></x-prodigy::icons.plus>
         </button>
     </x-prodigy::editor.nav>
@@ -19,13 +19,13 @@
                 @if(isset($page_item->content['redirect_page']) && $page_item->content['redirect_page'])
                     <div class="pro-text-xs pro-uppercase pro-py-px pro-px-1 pro-text-orange-500 pro-border pro-border-orange-600 pro-mr-2">Redirect</div>
                 @endif
-                <button wire:click.prevent="$emit('editPageSettings', {{ $page_item->id }})">
+                <button wire:click.prevent="$dispatch('editPageSettings', {{ $page_item->id }})">
                     <x-prodigy::icons.cog class="w-5 hover:pro-text-blue-500"></x-prodigy::icons.cog>
                 </button>
             </a>
         @empty
             <p class="pro-mb-4">No pages found.</p>
-            <x-prodigy::editor.button class="pro-flex-grow" wire:click="$emit('createPage')">
+            <x-prodigy::editor.button class="pro-flex-grow" wire:click="$dispatch('createPage')">
                 Create One
             </x-prodigy::editor.button>
         @endforelse

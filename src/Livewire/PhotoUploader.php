@@ -37,8 +37,8 @@ class PhotoUploader extends Component
     public function updatedPhoto()
     {
         $this->save();
-        $this->emit('fireGlobalRefresh');
-        $this->emitSelf('refresh');
+        $this->dispatch('fireGlobalRefresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function save()
@@ -58,8 +58,8 @@ class PhotoUploader extends Component
         Gate::authorize('viewProdigy', auth()->user());
 
         $this->block->getFirstMedia('prodigy', ['key' => $this->key])->delete();
-        $this->emit('fireGlobalRefresh');
-        $this->emitSelf('refresh');
+        $this->dispatch('fireGlobalRefresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function render()

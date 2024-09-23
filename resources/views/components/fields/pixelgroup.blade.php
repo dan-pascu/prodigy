@@ -10,11 +10,11 @@
 
 
     <div class="pro-relative pro-aspect-[16/9]" x-data="{
-        {{$key}}_united_values: @entangle("block.content.{$key}_united_values"),
-        {{$key}}_top: @entangle("block.content.{$key}_top"),
-        {{$key}}_right: @entangle("block.content.{$key}_right"),
-        {{$key}}_bottom: @entangle("block.content.{$key}_bottom"),
-        {{$key}}_left: @entangle("block.content.{$key}_left"),
+        {{$key}}_united_values: @entangle("block.content.{$key}_united_values").live,
+        {{$key}}_top: @entangle("block.content.{$key}_top").live,
+        {{$key}}_right: @entangle("block.content.{$key}_right").live,
+        {{$key}}_bottom: @entangle("block.content.{$key}_bottom").live,
+        {{$key}}_left: @entangle("block.content.{$key}_left").live,
         mergeValues(event) {
             if(this.{{$key}}_united_values) {
                 this.{{$key}}_top = this.{{$key}}_right = this.{{$key}}_bottom = this.{{$key}}_left = event.target.value

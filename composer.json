@@ -16,21 +16,21 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.1|^8.2|^8.3",
         "illuminate/contracts": "^9.0|^10.0|^11.0",
-        "livewire/livewire": "^2.12.8",
-        "spatie/laravel-medialibrary": "^10.15.0",
+        "livewire/livewire": "^3.5.8",
+        "spatie/laravel-medialibrary": "^11.9.1",
         "spatie/laravel-package-tools": "^1.16.5",
         "symfony/yaml": "^7.1.5"
     },
     "require-dev": {
         "laravel/pint": "^1.17.3",
-        "nunomaduro/collision": "^7.10",
+        "nunomaduro/collision": "^8.4.0",
         "nunomaduro/larastan": "^2.9.8",
-        "orchestra/testbench": "^8.26.0",
-        "pestphp/pest": "^2.35.1",
-        "pestphp/pest-plugin-laravel": "^v2.4.0",
-        "pestphp/pest-plugin-livewire": "^2.x-dev",
+        "orchestra/testbench": "^9.4.0",
+        "pestphp/pest": "^3.1.0",
+        "pestphp/pest-plugin-laravel": "^3.0.0",
+        "pestphp/pest-plugin-livewire": "^3.0.0",
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan-deprecation-rules": "^1.2.1",
         "phpstan/phpstan-phpunit": "^1.4.0"

@@ -6,7 +6,7 @@
     <div class="pro-flex">
         <div class="pro-rounded-tl-sm pro-flex pro-items-center pro-rounded-bl-sm pro-shadow-sm pro-bg-gray-50 pro-border pro-border-gray-300 pro-border-r-0 pro-px-2">
             <input type="color"
-               wire:model="block.content.{{$key}}"
+               wire:model.live="block.content.{{$key}}"
                value="{{ $block->content[$key] ?? null }}"
                class=""/>
         </div>

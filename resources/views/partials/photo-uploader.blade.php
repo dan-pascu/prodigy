@@ -15,7 +15,7 @@
         }
     }
 }">
-    <input type="file" class="pro-hidden" x-ref="photo" wire:model="photo">
+    <input type="file" class="pro-hidden" x-ref="photo" wire:model.live="photo">
 
     @error('photo') <p class="error pro-text-red-500">{{ $message }}</p> @enderror
     <div class=""

@@ -14,7 +14,7 @@
     <x-prodigy::editor.label :data="$data" :key="$key" for="block.content.{{$key}}"/>
 
     <div class="pro-relative" x-data="{
-        {{$key}}: @entangle("block.content.{$key}"),
+        {{$key}}: @entangle("block.content.{$key}").live,
         editItem: [],
         addItem() {
             this.{{$key}}.push({title: '', 'url': ''});

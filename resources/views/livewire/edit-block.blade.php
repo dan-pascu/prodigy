@@ -6,7 +6,7 @@
             <div class="pro-p-4 pro-flex pro-flex-wrap">
                 <x-prodigy::editor.h2 class="pro-px-2 pro-flex">
                     <div class="pro-flex-grow"
-                         x-data="{is_global: @entangle('block.is_global'), global_title: @entangle('block.global_title'), locally_editing_title: false}">
+                         x-data="{is_global: @entangle('block.is_global').live, global_title: @entangle('block.global_title').live, locally_editing_title: false}">
 
 
                         <div x-show="!is_global" class="pro-flex">

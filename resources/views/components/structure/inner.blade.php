@@ -35,7 +35,7 @@
 
      style="{{ $styles }}">
     @if($editing)
-        <div wire:click="$emit('editBlock', {{ $block->id }})"
+        <div wire:click="$dispatch('editBlock', {{ $block->id }})"
              class="{{ $topOffset }} {{ $group_hover_border_classes }} pro-absolute pro-inset-0"
              style="z-index:99998;"></div>
         <div x-data
@@ -50,12 +50,12 @@
             </button>
 
             <button class="pro-px-2 pro-py-2 pro-text-sm hover:pro-bg-blue-600"
-                    wire:click="$emit('editBlock', {{ $block->id }})">
+                    wire:click="$dispatch('editBlock', {{ $block->id }})">
                 <x-prodigy::icons.cog class="pro-w-5"/>
             </button>
 
             <button class="pro-px-2 pro-py-2 pro-text-sm hover:pro-bg-blue-600"
-                    wire:click="$emit('duplicateLink', {{$block->pivot->id}})">
+                    wire:click="$dispatch('duplicateLink', {{$block->pivot->id}})">
                 <x-prodigy::icons.m-document-duplicate class="pro-w-5"/>
             </button>
 
@@ -64,7 +64,7 @@
                 <x-prodigy::icons.m-x-mark class="pro-w-5"/>
             </button>
 
-            <div wire:click="$emit('editBlock', {{ $block->id }})" class="pro-text-white/80 pro-text-sm pro-p-2 pro-ml-1 pro-border-l pro-border-blue-600 pro-pl-2">{{ $block->title }}</div>
+            <div wire:click="$dispatch('editBlock', {{ $block->id }})" class="pro-text-white/80 pro-text-sm pro-p-2 pro-ml-1 pro-border-l pro-border-blue-600 pro-pl-2">{{ $block->title }}</div>
         </div>
     @endif
 

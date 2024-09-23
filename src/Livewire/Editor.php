@@ -90,7 +90,7 @@ class Editor extends Component {
 
         $entry = Entry::find($entry_id);
         (new DeleteEntryAction($entry))->execute();
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     public function addChildBlockThenEdit($key, $parent_model, $parent_block_id): void
@@ -113,7 +113,7 @@ class Editor extends Component {
         Gate::authorize('viewProdigy', auth()->user());
 
         (new DuplicateLinkAction($link_id))->execute();
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     public function deleteLink(int $link_id)
@@ -123,7 +123,7 @@ class Editor extends Component {
         $link = Link::find($link_id);
         (new DeleteLinkAction($link))->execute();
         $this->updateState('blocksList');
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     public function publishDraft(int $draft_id)
@@ -153,14 +153,14 @@ class Editor extends Component {
         (new DeletePageAction($page))->deleteDraft()->execute();
 
         $this->redirect(config('prodigy.home') . '?pro_editing=true');
-//        $this->emit('fireGlobalRefresh');
+//        $this->dispatch('fireGlobalRefresh');
     }
 
     public function updateState(string $stateString, int $editor_detail = null, string $entries_type = null)
     {
         $this->editor_detail = $editor_detail;
         $this->entries_type = $entries_type;
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
         $this->editor_state = $stateString;
     }
 

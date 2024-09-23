@@ -7,7 +7,7 @@
 @section('head')
     <style>{!! file_get_contents($cssPath) !!}</style>
     @livewireStyles
-    @livewireScripts
+    @livewireScriptConfig
 @endsection
 
 @section('content')

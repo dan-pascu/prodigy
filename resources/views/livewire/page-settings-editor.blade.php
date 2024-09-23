@@ -14,19 +14,19 @@
 
         <x-prodigy::editor.field-wrapper>
             <x-prodigy::editor.label label="Page Title" for="title"></x-prodigy::editor.label>
-            <x-prodigy::editor.input wire:model="block.title" id="title"/>
+            <x-prodigy::editor.input wire:model.live="block.title" id="title"/>
         </x-prodigy::editor.field-wrapper>
 
         <x-prodigy::editor.field-wrapper>
             <x-prodigy::editor.label label="Page Slug" for="slug"></x-prodigy::editor.label>
-            <x-prodigy::editor.input wire:model="block.slug" id="slug" />
+            <x-prodigy::editor.input wire:model.live="block.slug" id="slug" />
         </x-prodigy::editor.field-wrapper>
 
         <x-prodigy::editor.field-wrapper>
             <x-prodigy::editor.label label="Page Status" for="title"></x-prodigy::editor.label>
             <div class="pro-flex" x-cloak x-data="{
                     toggle: false,
-                    published_at: @entangle("block.published_at"),
+                    published_at: @entangle("block.published_at").live,
                     setDefaultValue() {
                         if(!this.published_at) {
                             this.published_at = ''

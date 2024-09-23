@@ -32,7 +32,7 @@ class EntriesList extends Component
         Gate::authorize('viewProdigy', auth()->user());
         $entry = Entry::find($entry_id);
         (new ReorderEntriesAction($entry))->execute($newOrder);
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     public function render()

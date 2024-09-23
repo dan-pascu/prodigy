@@ -4,13 +4,13 @@
     <x-prodigy::editor.label :data="$data" :key="$key" for="block.content.{{$key}}" />
 
     @if(isset($data['multiline']) && $data['multiline'] == true)
-        <x-prodigy::editor.textarea lines="3" wire:model.lazy="block.content.{{$key}}"
+        <x-prodigy::editor.textarea lines="3" wire:model.blur="block.content.{{$key}}"
            value="{{ $block->content[$key] ?? $data['default'] ?? null }}">
 
         </x-prodigy::editor.textarea>
     @else
         <x-prodigy::editor.input  type="text"
-           wire:model.lazy="block.content.{{$key}}"
+           wire:model.blur="block.content.{{$key}}"
            value="{{ $block->content[$key] ?? $data['default'] ?? null }}" />
     @endif
 

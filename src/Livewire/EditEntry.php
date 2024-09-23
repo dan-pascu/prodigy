@@ -80,7 +80,7 @@ class EditEntry extends Component
         $block = Block::find($block_id);
         (new ReorderBlocksAction($block))->execute($newOrder);
 
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     public function setOrder()
@@ -92,7 +92,7 @@ class EditEntry extends Component
     public function close(): void
     {
         // go back to the entries list.
-        $this->emit('updateState', 'entriesList', null, $this->block->type);
+        $this->dispatch('updateState', 'entriesList', null, $this->block->type);
     }
 
     public function render()

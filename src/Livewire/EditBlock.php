@@ -55,7 +55,7 @@ class EditBlock extends Component {
 
     public function updating()
     {
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     public function getSchema(GetSchemaAction $schemaBuilder): void
@@ -78,7 +78,7 @@ class EditBlock extends Component {
         $block = Block::find($block_id);
         (new ReorderBlocksAction($block))->execute($newOrder);
 
-        $this->emit('fireGlobalRefresh');
+        $this->dispatch('fireGlobalRefresh');
     }
 
     /**
@@ -107,9 +107,9 @@ class EditBlock extends Component {
         if (isset($this->block) && $this->block->key == 'repeater') {
             $parent = $this->block->link->prodigy_links; // The "point" is to get the block's parent ID. Wasn't working.
             if ($parent->model == 'entry') {
-                $this->emit('editEntry', $parent->id);
+                $this->dispatch('editEntry', $parent->id);
             } else {
-                $this->emit('editBlock', $parent->id);
+                $this->dispatch('editBlock', $parent->id);
 
             }
 
@@ -117,7 +117,7 @@ class EditBlock extends Component {
         }
 
         // Otherwise go back to the blocks list.
-        $this->emit('updateState', 'blocksList');
+        $this->dispatch('updateState', 'blocksList');
     }
 
     public function test()

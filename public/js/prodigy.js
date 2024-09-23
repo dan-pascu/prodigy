@@ -21,21 +21,21 @@ deleteLink = function deleteLink(id) {
   console.log(id);
   var response = confirm("Permanently delete?");
   if (response) {
-    Livewire.emit('deleteLink', id);
+    Livewire.dispatch('deleteLink', id);
   }
 };
 deletePage = function deletePage(id) {
   console.log(id);
   var response = confirm("Permanently delete?");
   if (response) {
-    Livewire.emit('deletePage', id);
+    Livewire.dispatch('deletePage', id);
   }
 };
 deleteEntry = function deleteEntry(id) {
   console.log(id);
   var response = confirm("Permanently delete?");
   if (response) {
-    Livewire.emit('deleteEntry', id);
+    Livewire.dispatch('deleteEntry', id);
   }
 };
 

@@ -4,7 +4,7 @@
         <x-prodigy::editor.label :data="$data" :key="$key" for="block.content.{{$key}}" />
 
     <div class="pro-flex pro-gap-2" x-data="{
-        {{$key}}: @entangle("block.content.{$key}"),
+        {{$key}}: @entangle("block.content.{$key}").live,
     }">
         <div>
             <p x-text="{{$key}}"></p>

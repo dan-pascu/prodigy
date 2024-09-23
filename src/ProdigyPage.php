@@ -162,7 +162,7 @@ class ProdigyPage extends Component
                 return $blockAdder->attachGlobalBlock($id)->execute();
             } else {
                 $block = $blockAdder->createBlockByKey($block_key)->execute();
-                $this->emit('editBlock', $block->id); // Open the editor once it's been created.
+                $this->dispatch('editBlock', $block->id); // Open the editor once it's been created.
 
                 return $block;
             }

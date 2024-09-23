@@ -114,6 +114,6 @@ class PageSettingsEditor extends Component
 
     public function close()
     {
-        $this->emit('updateState', 'pagesList');
+        $this->dispatch('updateState', 'pagesList');
     }
 }

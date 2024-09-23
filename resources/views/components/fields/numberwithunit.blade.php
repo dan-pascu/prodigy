@@ -10,8 +10,8 @@
 
 
     <div class="pro-flex" x-data="{
-        {{$key}}_value: @entangle("block.content.{$key}_value"),
-        {{$key}}_unit: @entangle("block.content.{$key}_unit"),
+        {{$key}}_value: @entangle("block.content.{$key}_value").live,
+        {{$key}}_unit: @entangle("block.content.{$key}_unit").live,
         setDefaultUnit() {
             if(!this.{{$key}}_unit) {
                 this.{{$key}}_unit = 'px'

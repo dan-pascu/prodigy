@@ -8,7 +8,7 @@
     <x-prodigy::editor.label :data="$data" :key="$key" for="block.content.{{$key}}"/>
 
     <div wire:ignore>
-        <textarea wire:model="block.content.{{$key}}" id="editor-{{ $random_number }}">{!! $block->content[$key] ?? '' !!}</textarea>
+        <textarea wire:model.live="block.content.{{$key}}" id="editor-{{ $random_number }}">{!! $block->content[$key] ?? '' !!}</textarea>
     </div>
 
     <script>
