@@ -169,7 +169,7 @@ class ProdigyPage extends Component
         });
 
         // Refresh is required in order to update order on all blocks in the frontend.
-        $this->emit('fireGlobalRefresh')->self();
+        $this->dispatch('fireGlobalRefresh')->self();
     }
 
     public function openProdigyPanel()
